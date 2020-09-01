@@ -1,0 +1,52 @@
+import random
+game = ["stone", "paper", "scissor"]
+chance=8
+number_of_rounds=0
+computers_point=0
+players_point=0
+print("\t Press ENTER to play Stone Paper Scissor Game \n")
+
+
+while number_of_rounds < chance:
+    player = input()
+    choice = random.choice(game)
+
+    if player==choice:
+        print("Awwwwww, same same 0 points \n")
+
+        # for player points
+    elif player=="stone" and choice=="scissor":
+        players_point= players_point+1
+        print(f"your choice {player} and computer guess is {choice}\n")
+        print(f"your point is {players_point}")
+
+    elif player=="scissor" and choice=="paper":
+        players_point = players_point + 1
+        print(f"your choice {player} and computer guess is {choice}\n")
+        print(f"your point is {players_point}")
+    elif player =="paper" and choice == "stone":
+        players_point = players_point + 1
+        print(f"your choice {player} and computer guess is {choice}\n")
+        print(f"your point is {players_point}")
+    elif choice=="scissor" and player=="paper":
+        computers_point = computers_point + 1
+        print(f"your choice {player} and computer guess is {choice}\n")
+        print(f"computer point is {computers_point}\n")
+    elif choice=="paper" and player=="stone":
+        computers_point = computers_point + 1
+        print(f"your choice {player} and computer guess is {choice}\n")
+        print(f"computer point is {computers_point}\n")
+    elif choice=="stone" and player=="scissor":
+        computers_point = computers_point + 1
+        print(f"your choice {player} and computer guess is {choice}\n")
+        print(f"computer point is {computers_point}\n")
+    else:
+        print("WHY??stone, give input as asked")
+    number_of_rounds+=1
+    print(f"{chance- number_of_rounds}is left out of{chance}\n")
+print("game over")
+if computers_point>players_point:
+    print("computer wins")
+if players_point>computers_point:
+    print("congratulations,you win party time")
+
